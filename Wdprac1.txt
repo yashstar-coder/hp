@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personal Details</title>
+</head>
+<body>
+
+    <center>
+        <h1><u>Personal Details</u></h1>
+    </center>
+
+    <p><b>Name:</b> Kshitij Kadam</p>
+
+    <p><i>Course:</i> Computer Engineering</p>
+
+    <p><strong>College:</strong> ABC College of Engineering</p>
+
+    <p><u>Email:</u> kshitij@example.com</p>
+
+    <p><mark>Mobile No:</mark> 9876543210</p>
+
+    <p><small>Address:</small> Pimpalgaon, India</p>
+
+    <p>Hobbies: <b><i>Reading, Coding, Playing Cricket</i></b></p>
+
+    <p>Date of Birth: 13<sup>th</sup> March 2005</p>
+
+</body>
+</html>
