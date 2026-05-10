@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Side Layout Calculator</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+        }
+        .calculator {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        input {
+            width: 220px;
+            height: 40px;
+            font-size: 20px;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+        .numbers, .operators {
+            display: flex;
+            flex-direction: column;
+        }
+        .row {
+            display: flex;
+        }
+        button {
+            width: 50px;
+            height: 50px;
+            font-size: 18px;
+            margin: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Calculator (Side Layout)</h2>
+
+<input type="text" id="result" disabled>
+
+<div class="calculator">
+
+    <!-- Numbers Section -->
+    <div class="numbers">
+        <div class="row">
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+        </div>
+        <div class="row">
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+        </div>
+        <div class="row">
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+        </div>
+        <div class="row">
+            <button onclick="appendNumber('0')">0</button>
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="calculate()">=</button>
+        </div>
+    </div>
+
+    <!-- Operators Section -->
+    <div class="operators">
+        <button onclick="setOperation('+')">+</button>
+        <button onclick="setOperation('-')">-</button>
+        <button onclick="setOperation('*')">*</button>
+        <button onclick="setOperation('/')">/</button>
+    </div>
+
+</div>
+
+<script>
+    let num1 = 0;
+    let num2 = 0;
+    let operator = "";
+
+    function appendNumber(num) {
+        document.getElementById("result").value += num;
+    }
+
+    function setOperation(op) {
+        num1 = parseFloat(document.getElementById("result").value);
+        operator = op;
+        document.getElementById("result").value = "";
+    }
+
+    function calculate() {
+        num2 = parseFloat(document.getElementById("result").value);
+        let result;
+
+        switch(operator) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                result = (num2 !== 0) ? num1 / num2 : "Error";
+                break;
+            default:
+                result = "Invalid";
+        }
+
+        document.getElementById("result").value = result;
+    }
+
+    function clearDisplay() {
+        document.getElementById("result").value = "";
+    }
+</script>
+
+</body>
+</html>
