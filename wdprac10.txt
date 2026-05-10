@@ -1,0 +1,27 @@
+<?php
+// Original string
+$string = "Hello, World!";
+
+// 1. Find string length
+$length = strlen($string);
+
+// 2. Reverse the string
+$reversed = strrev($string);
+
+// 3. Extract substring (start index 0, length 5)
+$substring = substr($string, 0, 5);
+
+// 4. Convert to uppercase
+$uppercase = strtoupper($string);
+
+// 5. Convert to lowercase
+$lowercase = strtolower($string);
+
+// Display results
+echo "Original String: " . $string . "<br>";
+echo "Length: " . $length . "<br>";
+echo "Reversed String: " . $reversed . "<br>";
+echo "Substring (0-5): " . $substring . "<br>";
+echo "Uppercase: " . $uppercase . "<br>";
+echo "Lowercase: " . $lowercase . "<br>";
+?>
