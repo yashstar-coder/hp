@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Example</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="wdprac4.css.css">
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: Arial;
+        }
+
+        h2 {
+            color: darkblue;
+            text-align: center;
+        }
+
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: auto;
+        }
+
+        th, td {
+            border: 2px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Inline CSS -->
+    <h1 style="color:red; text-align:center;">
+        Student Details
+    </h1>
+
+    <h2>CSS Styling Example</h2>
+     
+
+    <table>
+        <tr>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>Course</th>
+        </tr>
+
+        <tr>
+            <td>101</td>
+            <td>Kshitij</td>
+            <td>Computer Engineering</td>
+        </tr>
+
+        <tr>
+            <td>102</td>
+            <td>Rahul</td>
+            <td>Information Technology</td>
+        </tr>
+    </table>
+
+</body>
+</html>
