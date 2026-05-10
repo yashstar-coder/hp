@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+        form {
+            width: 300px;
+            margin: 50px auto;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+        .success {
+            color: green;
+            font-size: 14px;
+        }
+        button {
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+
+    <!-- Name -->
+    <input type="text" id="name" placeholder="Enter Name" oninput="validateName()">
+    <div id="nameMsg"></div>
+
+    <!-- Email -->
+    <input type="text" id="email" placeholder="Enter Email" oninput="validateEmail()">
+    <div id="emailMsg"></div>
+
+    <!-- Password -->
+    <input type="password" id="password" placeholder="Enter Password" oninput="validatePassword()">
+    <div id="passMsg"></div>
+
+    <!-- Submit Button -->
+    <button type="submit">Register</button>
+
+</form>
+
+<script>
+
+// Name Validation
+function validateName() {
+    let name = document.getElementById("name").value;
+    let msg = document.getElementById("nameMsg");
+
+    if (name === "") {
+        msg.innerHTML = "Name cannot be empty";
+        msg.className = "error";
+        return false;
+    } else {
+        msg.innerHTML = "Valid Name";
+        msg.className = "success";
+        return true;
+    }
+}
+
+// Email Validation
+function validateEmail() {
+    let email = document.getElementById("email").value;
+    let msg = document.getElementById("emailMsg");
+
+    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    if (email === "") {
+        msg.innerHTML = "Email cannot be empty";
+        msg.className = "error";
+        return false;
+    } else if (!email.match(pattern)) {
+        msg.innerHTML = "Invalid Email";
+        msg.className = "error";
+        return false;
+    } else {
+        msg.innerHTML = "Valid Email";
+        msg.className = "success";
+        return true;
+    }
+}
+
+// Password Validation
+function validatePassword() {
+    let pass = document.getElementById("password").value;
+    let msg = document.getElementById("passMsg");
+
+    if (pass.length < 6) {
+        msg.innerHTML = "Min 6 characters required";
+        msg.className = "error";
+        return false;
+    } else {
+        msg.innerHTML = "Strong Password";
+        msg.className = "success";
+        return true;
+    }
+}
+
+// Final Form Validation
+function validateForm() {
+    let isNameValid = validateName();
+    let isEmailValid = validateEmail();
+    let isPassValid = validatePassword();
+
+    if (isNameValid && isEmailValid && isPassValid) {
+        alert("Registration Successful!");
+        return true;
+    } else {
+        alert("Please fix errors before submitting");
+        return false;
+    }
+}
+
+</script>
+
+</body>
+</html>
